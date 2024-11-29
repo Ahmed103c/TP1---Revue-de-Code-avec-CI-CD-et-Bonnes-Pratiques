@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 /**
- * Classe pour vérifier la sécurité des mots de passe en utilisant des centres de clusters et un calcul de distance euclidienne.
+ * Classe pour verifier la securite des mots de passe en utilisant des centres de clusters et un calcul de distance euclidienne.
  */
 public class AwesomePasswordChecker 
 {
@@ -24,26 +24,26 @@ public class AwesomePasswordChecker
   private final List<double[]> clusterCenters = new ArrayList<>();
 
     /**
-   * Méthode statique pour obtenir l'instance unique de la classe.
-   * Charge les centres de clusters à partir d'un fichier donné.
+   * Methode statique pour obtenir l'instance unique de la classe.
+   * Charge les centres de clusters à partir d'un fichier donne.
    *
    * @param file Le fichier contenant les centres de clusters.
    * @return L'instance d'AwesomePasswordChecker.
-   * @throws IOException Si une erreur d'entrée/sortie se produit.
+   * @throws IOException Si une erreur d'entree/sortie se produit.
    */
   public static AwesomePasswordChecker getInstance(File file) throws IOException {
     if (instance == null) {
-          instance = new AwesomePasswordChecker(new FileInputStream(file)); // Appel au constructeur privé
+          instance = new AwesomePasswordChecker(new FileInputStream(file)); // Appel au constructeur prive
     }
     return instance;
   }
 
     /**
-   * Méthode statique pour obtenir l'instance unique de la classe.
+   * Methode statique pour obtenir l'instance unique de la classe.
    * Charge les centres de clusters à partir d'une ressource interne.
    *
    * @return L'instance d'AwesomePasswordChecker.
-   * @throws IOException Si une erreur d'entrée/sortie se produit.
+   * @throws IOException Si une erreur d'entree/sortie se produit.
    */
   public static AwesomePasswordChecker getInstance() throws IOException {
     if (instance == null) {
@@ -54,17 +54,17 @@ public class AwesomePasswordChecker
   }
       
   /**
-   * Constructeur privé qui lit les centres de clusters à partir d'un flux d'entrée.
+   * Constructeur prive qui lit les centres de clusters à partir d'un flux d'entree.
    *
-   * @param is Le flux d'entrée contenant les données des centres de clusters.
-   * @throws IOException Si une erreur d'entrée/sortie se produit.
+   * @param is Le flux d'entree contenant les donnees des centres de clusters.
+   * @throws IOException Si une erreur d'entree/sortie se produit.
    */
   private AwesomePasswordChecker(InputStream is) throws IOException {
     BufferedReader br = new BufferedReader(new InputStreamReader(is));
     String line;
     while((line = br.readLine()) != null){
-      String[] values = line.split(",");  // Modification de ; vers , car les nombres sont sépare par , dans .csv
-      //System.out.println("Valeurs lues : " + Arrays.toString(values));  // Affiche les valeurs lues avant traitement , on vérifie qu'ils ont bien lu 
+      String[] values = line.split(",");  // Modification de ; vers , car les nombres sont separe par , dans .csv
+      //System.out.println("Valeurs lues : " + Arrays.toString(values));  // Affiche les valeurs lues avant traitement , on verifie qu'ils ont bien lu 
       //System.out.println("Value 1 : "+values[0]+" Value 2 : "+values[1]); // par moi 
       double[] center = new double[values.length];
       
@@ -80,7 +80,7 @@ public class AwesomePasswordChecker
     br.close();
   }
 
-  //Test de la fonction maskAff est réussit ! 
+  //Test de la fonction maskAff est reussit ! 
   public int[] maskAff(String password) {
     int[] maskArray = new int[28]; 
     int limit = Math.min(password.length(), 28);
@@ -151,14 +151,14 @@ public class AwesomePasswordChecker
     int[] maskArray = maskAff(password);
     double minDistance = Double.MAX_VALUE;
     for (double[] center : clusterCenters) {
-      //minDistance = Math.min(euclideanDistance(maskArray, center), minDistance); // un problème arrive dans le test : minDistance prenant la valeur NaN (Not-a-Number) est probablement dû à une valeur invalide dans la méthode 
-                                                                                 //euclideanDistance. Cela se produit lorsque la différence entre les éléments des tableaux que vous comparez 
-                                                                                 //donne un résultat qui ne peut pas être calculé, souvent parce qu'il y a une différence non définie (par exemple, si l'un des éléments est NaN ou infiniment grand
+      //minDistance = Math.min(euclideanDistance(maskArray, center), minDistance); // un problème arrive dans le test : minDistance prenant la valeur NaN (Not-a-Number) est probablement dû à une valeur invalide dans la methode 
+                                                                                 //euclideanDistance. Cela se produit lorsque la difference entre les elements des tableaux que vous comparez 
+                                                                                 //donne un resultat qui ne peut pas être calcule, souvent parce qu'il y a une difference non definie (par exemple, si l'un des elements est NaN ou infiniment grand
       
         // ajout moi 
         double distance = euclideanDistance(maskArray, center);
         
-        // Vérifier si la distance calculée n'est pas NaN avant de la comparer
+        // Verifier si la distance calculee n'est pas NaN avant de la comparer
         if (!Double.isNaN(distance)) {
             minDistance = Math.min(distance, minDistance);
         }
@@ -167,9 +167,9 @@ public class AwesomePasswordChecker
     return minDistance;
   }
   /**
-   * Calcule la distance euclidienne entre un tableau de caractères masqués et un centre de cluster.
+   * Calcule la distance euclidienne entre un tableau de caractères masques et un centre de cluster.
    *
-   * @param a Le tableau représentant les caractéristiques du mot de passe.
+   * @param a Le tableau representant les caracteristiques du mot de passe.
    * @param b Le centre de cluster.
    * @return La distance euclidienne entre a et b.
    */
@@ -182,10 +182,10 @@ public class AwesomePasswordChecker
     return Math.sqrt(sum);
   }
   /**
-   * Calcule la valeur MD5 d'une chaîne d'entrée.
+   * Calcule la valeur MD5 d'une chaîne d'entree.
    *
    * @param input La chaîne dont on souhaite calculer le MD5.
-   * @return La valeur MD5 de la chaîne d'entrée sous forme de chaîne hexadécimale.
+   * @return La valeur MD5 de la chaîne d'entree sous forme de chaîne hexadecimale.
    */
   public static String ComputeMD5(String input) {
     byte[] message = input.getBytes();
