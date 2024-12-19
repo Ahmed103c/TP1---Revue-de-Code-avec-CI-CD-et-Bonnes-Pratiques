@@ -37,8 +37,12 @@ jobs:
           key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
           restore-keys: |
             ${{ runner.os }}-maven-
-
-      - name: Build and Run Tests
+        
+            
+      - name: Compile the project
+        run: mvn clean compile  # Nettoyer et compiler le projet
+        
+      - name: Run Tests
         run: mvn clean test
         working-directory: ./aipasswordcheck
 
