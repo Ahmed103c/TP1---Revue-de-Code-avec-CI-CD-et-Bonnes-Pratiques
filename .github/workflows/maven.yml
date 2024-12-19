@@ -41,6 +41,7 @@ jobs:
             
       - name: Compile the project
         run: mvn clean compile  # Nettoyer et compiler le projet
+        working-directory: ./aipasswordcheck
         
       - name: Run Tests
         run: mvn clean test
