@@ -6,7 +6,7 @@ Ce projet vise à mettre en place les bonnes pratiques de développement en util
 
 ### 1. **Création de la structure du projet Java avec Maven**
 
-- Nous avons utilisé **Maven** pour initialiser la structure du projet Java et gérer les dépendances et les plugins nécessaires. Maven facilite la gestion de projet en automatisant des tâches comme la compilation, les tests et le déploiement.
+- J'ai utilisé **Maven** pour initialiser la structure du projet Java et gérer les dépendances et les plugins nécessaires. Maven facilite la gestion de projet en automatisant des tâches comme la compilation, les tests et le déploiement.
 
 ### 2. **Ajout du code de stagiaire dans le dossier `main`**
 
