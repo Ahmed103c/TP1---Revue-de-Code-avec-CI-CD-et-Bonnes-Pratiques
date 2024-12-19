@@ -7,8 +7,8 @@ Ajout du Javadoc/style / Tests /CI-CD sur le code fourni
 -3.**Etape 03** : Summary of the project and basic usage of the library :
 la fonction maskAff prend en paramètre un password type string et
 retourne en sortie un tableau de entier chaque entier représente la transformation d'un charactère dans le password
-
--4.**Etape 04** : génération de documentation java :
+-4.**Etape 04** : Ecriture des test unitaires dans fichier Test.java
+-5.**Etape 05** : génération de documentation java :
 utiliser dans le code
 /\*\*
 
