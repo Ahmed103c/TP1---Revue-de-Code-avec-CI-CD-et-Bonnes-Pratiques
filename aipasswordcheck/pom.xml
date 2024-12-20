@@ -83,8 +83,6 @@
                 <configLocation>sun_checks.xml</configLocation>
             </configuration>
         </plugin>
-      </plugins>
-        <plugins>
     <!-- Ajout du plugin JaCoCo -->
     <plugin>
       <groupId>org.jacoco</groupId>
@@ -99,7 +97,10 @@
         </execution>
       </executions>
     </plugin>
-  </plugins>
+      </plugins>
+        
+
+
     </pluginManagement>
   </build>
 </project>
