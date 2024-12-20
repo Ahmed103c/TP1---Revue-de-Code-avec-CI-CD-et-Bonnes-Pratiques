@@ -25,8 +25,8 @@ jobs:
 
       - name: Build the project and generate JAR
         run: mvn clean package -DskipTests # Générez le fichier JAR
-        working-directory: ./aipasswordcheck # Si votre projet est dans un sous-répertoire, ajustez le chemin
+        working-directory: ./aipasswordcheck 
 
       - name: Run Performance Testing
-        run: java -jar ./aipasswordcheck/target/my-app.jar --performancetest # Remplacez avec le nom correct du fichier JAR
-        working-directory: ./aipasswordcheck # Ajustez si nécessaire
+        run: java -jar ./aipasswordcheck/target/my-app-tests.jar --performancetest 
+        working-directory: ./aipasswordcheck 
