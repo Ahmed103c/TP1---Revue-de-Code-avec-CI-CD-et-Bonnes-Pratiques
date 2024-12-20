@@ -24,9 +24,9 @@ jobs:
 
       - name: Run Performance Tests
         run: mvn clean install -DskipTests # Installe les dépendances sans exécuter les tests
-        working-directory: ./your-project-directory
+        working-directory: ./aipasswordcheck
 
       - name: Run Performance Testing Script
         run: |
           java -jar target/your-application.jar --performancetest # Remplacez avec votre commande de test de performance
-        working-directory: ./your-project-directory
+        working-directory: ./aipasswordcheck
