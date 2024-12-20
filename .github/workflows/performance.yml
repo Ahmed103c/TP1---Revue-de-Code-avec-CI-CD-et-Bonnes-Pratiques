@@ -28,5 +28,5 @@ jobs:
         working-directory: ./aipasswordcheck # Si votre projet est dans un sous-répertoire, ajustez le chemin
 
       - name: Run Performance Testing
-        run: java -jar target/my-app.jar --performancetest # Remplacez avec le nom correct du fichier JAR
+        run: java -jar ./aipasswordcheck/target/my-app.jar --performancetest # Remplacez avec le nom correct du fichier JAR
         working-directory: ./aipasswordcheck # Ajustez si nécessaire
