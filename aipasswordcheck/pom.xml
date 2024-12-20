@@ -84,6 +84,22 @@
             </configuration>
         </plugin>
       </plugins>
+        <plugins>
+    <!-- Ajout du plugin JaCoCo -->
+    <plugin>
+      <groupId>org.jacoco</groupId>
+      <artifactId>jacoco-maven-plugin</artifactId>
+      <version>0.8.8</version> <!-- Vous pouvez utiliser une version plus récente si disponible -->
+      <executions>
+        <execution>
+          <goals>
+            <goal>prepare-agent</goal>
+            <goal>report</goal>
+          </goals>
+        </execution>
+      </executions>
+    </plugin>
+  </plugins>
     </pluginManagement>
   </build>
 </project>
