@@ -1,0 +1,32 @@
+name: Performance Test
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  performance-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Run Performance Tests
+        run: mvn clean install -DskipTests # Installe les dépendances sans exécuter les tests
+        working-directory: ./your-project-directory
+
+      - name: Run Performance Testing Script
+        run: |
+          java -jar target/your-application.jar --performancetest # Remplacez avec votre commande de test de performance
+        working-directory: ./your-project-directory
