@@ -1,3 +1,4 @@
+
 name: Performance Test
 
 on:
@@ -22,11 +23,10 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Run Performance Tests
-        run: mvn clean install -DskipTests # Installe les dépendances sans exécuter les tests
-        working-directory: ./aipasswordcheck
+      - name: Build the project and generate JAR
+        run: mvn clean package -DskipTests # Générez le fichier JAR
+        working-directory: ./aipasswordcheck # Si votre projet est dans un sous-répertoire, ajustez le chemin
 
-      - name: Run Performance Testing Script
-        run: |
-          java -jar target/your-application.jar --performancetest # Remplacez avec votre commande de test de performance
-        working-directory: ./aipasswordcheck
+      - name: Run Performance Testing
+        run: java -jar target/my-app.jar --performancetest # Remplacez avec le nom correct du fichier JAR
+        working-directory: ./aipasswordcheck # Ajustez si nécessaire
